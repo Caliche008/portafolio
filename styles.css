@@ -266,3 +266,28 @@ h3 { font-family: var(--tipo-display); font-size: 22px; line-height: 1.1; margin
   .barra-skill i { transition: none; }
   #fondo { display: none; }
 }
+
+/* ---------- Ilustraciones retro decorativas ---------- */
+.inicio, .seccion { position: relative; }
+.deco {
+  position: absolute; width: 90px; height: auto; z-index: 0; pointer-events: none;
+  filter: drop-shadow(5px 5px 0 var(--negro));
+  animation: flotar 5s ease-in-out infinite;
+}
+.deco-teclado { width: 150px; top: 30px; right: 24px; animation-delay: -1s; }
+.deco-disco { width: 80px; top: 40px; left: 24px; animation-delay: -2s; }
+.deco-joystick { width: 110px; bottom: 30px; right: 30px; animation-delay: -3s; }
+.deco-sonrisa { width: 70px; bottom: 40px; left: 30px; animation: girar 8s linear infinite; }
+.deco-corazon { width: 80px; top: 30px; right: 30px; animation-delay: -4s; }
+@media (max-width: 760px) {
+  .deco { width: 60px; }
+  .deco-teclado { width: 100px; }
+}
+
+/* ---------- Imágenes PNG sin fondo ---------- */
+img.deco { display: block; }
+.deco-cerebro { width: 130px; top: 10px; right: 20px; animation-delay: -2s; }
+.deco-computadora { width: 150px; bottom: 30px; left: 24px; animation-delay: -1s; }
+@media (max-width: 760px) {
+  .deco-cerebro, .deco-computadora { width: 90px; }
+}
