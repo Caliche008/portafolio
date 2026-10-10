@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Carlos Ortiz: Cloud, AWS, infraestructura TI, soporte técnico y soluciones digitales con IA.">
+  <title>Carlos Ortiz | Cloud, infraestructura y soporte TI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Símbolos pixel art reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="pc" viewBox="0 0 120 100">
+      <rect x="18" y="8" width="84" height="62" fill="#D9D4C7"/>
+      <rect x="26" y="16" width="68" height="46" fill="#2D3A8C"/>
+      <rect x="34" y="22" width="20" height="4" fill="#7FB8FF"/>
+      <rect x="34" y="30" width="32" height="4" fill="#7FB8FF"/>
+      <rect x="34" y="38" width="14" height="4" fill="#7FB8FF"/>
+      <rect x="10" y="74" width="100" height="8" fill="#B9B3A3"/>
+      <rect x="20" y="82" width="80" height="12" fill="#D9D4C7"/>
+      <rect x="82" y="86" width="6" height="4" fill="#3FA34D"/>
+    </symbol>
+    <symbol id="estrella" viewBox="0 0 20 20">
+      <rect x="8" y="0" width="4" height="20" fill="#F7C948"/>
+      <rect x="0" y="8" width="20" height="4" fill="#F7C948"/>
+      <rect x="4" y="4" width="3" height="3" fill="#F7C948"/>
+      <rect x="13" y="4" width="3" height="3" fill="#F7C948"/>
+      <rect x="4" y="13" width="3" height="3" fill="#F7C948"/>
+      <rect x="13" y="13" width="3" height="3" fill="#F7C948"/>
+    </symbol>
+    <symbol id="sello" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="18" fill="#E2445C"/>
+      <path d="M12 20 L18 26 L28 14" stroke="#F3EBDD" stroke-width="4" fill="none" stroke-linecap="square"/>
+    </symbol>
+  </svg>
+
+  <div class="grano" aria-hidden="true"></div>
+  <canvas id="fondo" aria-hidden="true"></canvas>
+  <a class="saltar" href="#inicio">Ir al contenido</a>
+
+  <header class="barra" id="barra">
+    <a href="#inicio" class="marca">CO<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navegacion" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+    <nav id="navegacion" class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="inicio">
+      <div class="tarjeta-id reveal" data-rot="-1.5">
+        <div class="id-foto">
+          <img src="foto.jpg" alt="Foto de Carlos Ortiz" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <svg class="id-avatar" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges" style="display:none">
+            <rect x="2" y="0" width="4" height="2" fill="#2D3A8C"/><rect x="1" y="2" width="6" height="3" fill="#F26B1D"/><rect x="2" y="5" width="4" height="3" fill="#2D3A8C"/>
+          </svg>
+          <span class="sello-pos">Positivo</span>
+        </div>
+        <div class="id-datos">
+          <p class="id-nombre">CARLOS ORTIZ</p>
+          <p class="id-rol">Junior Cloud / AWS</p>
+          <p class="id-linea">Infraestructura TI · Soporte TI · Antioquia, Colombia</p>
+          <div class="redes" aria-label="Redes sociales">
+            <a href="https://www.linkedin.com/in/carlos-ortizj/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Caliche008" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloque-hola reveal" data-rot="1.5">
+        <p>HOLA<br>MUNDO</p>
+        <svg class="estrella-girando" aria-hidden="true"><use href="#estrella"/></svg>
+      </div>
+
+      <div class="inicio-acciones reveal">
+        <p class="sintesis">Tecnólogo en Electrónica y en Administración y Mantenimiento de Computadores y Redes, con más de seis años en soporte TI e infraestructura. Hoy me enfoco en AWS Cloud, ciberseguridad e inteligencia artificial para resolver problemas reales.</p>
+        <div class="acciones">
+          <a href="#proyectos" class="boton boton-principal">Ver proyectos</a>
+          <a href="cv.pdf" class="boton" download>Descargar CV</a>
+          <a href="#contacto" class="boton">Contactarme</a>
+        </div>
+        <p class="escribiendo" aria-live="polite"><span id="rol-animado"></span><span class="cursor">|</span></p>
+      </div>
+
+      <div class="cinta" aria-hidden="true">
+        <div class="cinta-pista">
+          <span>Cloud</span><span>AWS</span><span>Infraestructura</span><span>Soporte TI</span><span>Ciberseguridad</span><span>IA aplicada</span><span>Diseño 3D</span>
+          <span>Cloud</span><span>AWS</span><span>Infraestructura</span><span>Soporte TI</span><span>Ciberseguridad</span><span>IA aplicada</span><span>Diseño 3D</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="seccion seccion-amarilla">
+      <header class="cabecera">
+        <h2 class="reveal">Sobre mí</h2>
+        <svg class="pc-ilustracion reveal" aria-hidden="true"><use href="#pc"/></svg>
+      </header>
+      <div class="rejilla-sobre">
+        <article class="bloque-claro reveal" data-rot="-1">
+          <h3>Perfil</h3>
+          <p>Busco oportunidades Junior en Cloud, AWS, infraestructura cloud o infraestructura TI. Combino más de seis años de soporte e infraestructura en entornos bancarios, aeroportuarios y del sector público con mi formación reciente en computación en la nube, automatización y ciberseguridad.</p>
+        </article>
+        <article class="bloque-claro reveal" data-rot="0.8">
+          <h3>Experiencia</h3>
+          <ul class="lista-linea">
+            <li><strong>Auxiliar administrativo, sector público</strong><span>2019 – 2022 · Gestión de información y bases de datos</span></li>
+            <li><strong>Soporte técnico independiente</strong><span>2017 – 2019 · Hardware, software y redes LAN</span></li>
+            <li><strong>Técnico de soporte TI, aeropuerto</strong><span>2016 · Infraestructura crítica y sistemas de información</span></li>
+            <li><strong>Analista de mesa de ayuda, proyecto bancario</strong><span>2013 – 2016 · Gestión de incidentes bajo SLA</span></li>
+            <li><strong>Técnico en instalación de redes</strong><span>2010 – 2012 · Cableado estructurado y conectividad</span></li>
+          </ul>
+        </article>
+        <article class="bloque-claro reveal" data-rot="-0.6">
+          <h3>Formación</h3>
+          <ul class="lista-linea">
+            <li><strong>Comunicación Digital</strong><span>UNIMINUTO · En curso</span></li>
+            <li><strong>Tecnología en Electrónica</strong><span>Tecnológico de Antioquia</span></li>
+            <li><strong>Administración, ensamble y mantenimiento de computadores y redes</strong><span>SENA</span></li>
+            <li><strong>Técnico profesional en Diseño Gráfico</strong><span>CENSA</span></li>
+          </ul>
+        </article>
+        <article class="bloque-claro reveal" data-rot="1">
+          <h3>Certificaciones</h3>
+          <div class="etiquetas">
+            <span>AWS Cloud Practitioner</span><span>AWS AI Practitioner</span><span>Bootcamp AWS Cloud</span><span>Auditor interno ISO</span><span>Fundamentos de ciberseguridad</span><span>Programación web</span><span>Inteligencia artificial</span>
+          </div>
+          <p class="idiomas">Español: nativo · Inglés: básico (A2), en proceso de mejora</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="seccion seccion-naranja">
+      <header class="cabecera">
+        <h2 class="reveal">Habilidades</h2>
+        <p class="reveal">Nivel aproximado según experiencia real.</p>
+      </header>
+      <div class="rejilla-habilidades">
+        <div class="bloque-oscuro reveal" data-rot="-1">
+          <h3>Tecnología e infraestructura</h3>
+          <div class="barra-skill" data-nivel="85"><span>Soporte técnico y gestión de incidentes</span><div><i></i></div></div>
+          <div class="barra-skill" data-nivel="80"><span>Redes LAN, WAN y cableado estructurado</span><div><i></i></div></div>
+          <div class="barra-skill" data-nivel="78"><span>Sistemas operativos y virtualización</span><div><i></i></div></div>
+          <div class="barra-skill" data-nivel="70"><span>Mantenimiento preventivo y correctivo</span><div><i></i></div></div>
+        </div>
+        <div class="bloque-oscuro reveal" data-rot="1.2">
+          <h3>Cloud, IA y diseño</h3>
+          <div class="barra-skill" data-nivel="60"><span>AWS Cloud (en aprendizaje)</span><div><i></i></div></div>
+          <div class="barra-skill" data-nivel="55"><span>Ciberseguridad básica</span><div><i></i></div></div>
+          <div class="barra-skill" data-nivel="65"><span>GitHub y desarrollo asistido por IA</span><div><i></i></div></div>
+          <div class="barra-skill" data-nivel="70"><span>Diseño gráfico y modelado 3D (Blender, ZBrush)</span><div><i></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="seccion seccion-verde">
+      <header class="cabecera">
+        <h2 class="reveal">Servicios</h2>
+        <svg class="sello-girando" aria-hidden="true"><use href="#sello"/></svg>
+      </header>
+      <div class="rejilla-servicios">
+        <article class="servicio reveal" data-rot="-1.2"><span class="etiqueta-sello">01</span><h3>Soporte tecnológico</h3><p>Diagnóstico, configuración y mantenimiento de equipos informáticos.</p></article>
+        <article class="servicio reveal" data-rot="0.8"><span class="etiqueta-sello">02</span><h3>Infraestructura TI</h3><p>Apoyo en redes, conectividad y entornos tecnológicos.</p></article>
+        <article class="servicio reveal" data-rot="-0.5"><span class="etiqueta-sello">03</span><h3>Soluciones con IA</h3><p>Prototipos de aplicaciones con desarrollo asistido por inteligencia artificial.</p></article>
+        <article class="servicio reveal" data-rot="1.1"><span class="etiqueta-sello">04</span><h3>Diseño y 3D</h3><p>Piezas visuales, identidad gráfica y modelado 3D con Blender y ZBrush.</p></article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="seccion seccion-oscura">
+      <header class="cabecera">
+        <h2 class="reveal">Proyectos</h2>
+        <div class="filtros" role="group" aria-label="Filtrar proyectos">
+          <button class="filtro activo" data-filtro="todos">Todos</button>
+          <button class="filtro" data-filtro="cloud">Cloud</button>
+          <button class="filtro" data-filtro="web">Web</button>
+          <button class="filtro" data-filtro="arte">Arte 3D</button>
+        </div>
+      </header>
+      <div class="rejilla-proyectos">
+        <article class="proyecto reveal" data-categoria="web" data-rot="-1">
+          <span class="proyecto-tag">Web · IA</span>
+          <h3>FutureSkills</h3>
+          <p>Plataforma de orientación que identifica brechas de conocimiento y propone rutas de aprendizaje personalizadas.</p>
+          <ul class="stack"><li>React</li><li>TypeScript</li><li>FastAPI</li><li>IA</li></ul>
+          <a class="proyecto-enlace" href="https://future-skills-puce.vercel.app/" target="_blank" rel="noopener">Ver proyecto (MVP desplegado)</a>
+        </article>
+        <article class="proyecto reveal" data-categoria="web cloud" data-rot="1">
+          <span class="proyecto-tag">Web · Cloud</span>
+          <h3>LivingShare</h3>
+          <p>Aplicación para conectar personas que buscan vivienda compartida y gestionar habitaciones y gastos.</p>
+          <ul class="stack"><li>Next.js</li><li>TypeScript</li><li>Firebase</li><li>Stripe</li><li>Vercel</li></ul>
+          <a class="proyecto-enlace" href="https://living-share-kiro.vercel.app/login" target="_blank" rel="noopener">Ver proyecto</a>
+        </article>
+        <article class="proyecto reveal" data-categoria="cloud" data-rot="-0.7">
+          <span class="proyecto-tag">Cloud · AWS</span>
+          <h3>Laboratorios AWS y Cloud</h3>
+          <p>Prácticas sobre almacenamiento, infraestructura, IA y fundamentos de seguridad en la nube, con documentación de cada práctica.</p>
+          <ul class="stack"><li>S3</li><li>Linux</li><li>Docker</li><li>Terraform</li></ul>
+        </article>
+        <article class="proyecto reveal" data-categoria="arte" data-rot="0.9">
+          <span class="proyecto-tag">Arte digital · 3D</span>
+          <h3>Escultura y modelado 3D</h3>
+          <p>Modelado, escultura digital, texturizado e ilustración que muestran mi lado creativo y visual.</p>
+          <ul class="stack"><li>Blender</li><li>ZBrush</li><li>Substance Painter</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccion seccion-amarilla contacto">
+      <header class="cabecera">
+        <h2 class="reveal">Contacto</h2>
+        <svg class="estrella-girando" aria-hidden="true"><use href="#estrella"/></svg>
+      </header>
+      <div class="contacto-grid">
+        <div class="medios reveal" data-rot="-1">
+          <p>Interesado en oportunidades en Cloud Computing, AWS, infraestructura TI, ciberseguridad y soluciones digitales. También abierto a colaboraciones tecnológicas y creativas.</p>
+          <a href="https://www.linkedin.com/in/carlos-ortizj/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Caliche008" target="_blank" rel="noopener">GitHub</a>
+          <p>Antioquia, Colombia · Trabajo remoto</p>
+        </div>
+        <form id="formulario" class="formulario reveal" data-rot="1" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+            <small class="error" id="error-nombre"></small>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
+            <small class="error" id="error-correo"></small>
+          </div>
+          <div class="campo">
+            <label for="asunto">Asunto</label>
+            <select id="asunto" name="asunto">
+              <option value="Oportunidad laboral">Oportunidad laboral</option>
+              <option value="Cloud y AWS">Cloud y AWS</option>
+              <option value="Infraestructura TI">Infraestructura TI</option>
+              <option value="Colaboración">Colaboración</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <small class="error" id="error-mensaje"></small>
+          </div>
+          <button type="submit" class="boton boton-principal">Enviar mensaje</button>
+          <p class="estado" id="estado" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>© <span id="anio"></span> Carlos Ortiz · Hecho con HTML, CSS y JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
