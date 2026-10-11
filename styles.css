@@ -311,3 +311,23 @@ img.deco { display: block; }
 
 /* Override final: foto a color original */
 .id-foto img { filter: none !important; mix-blend-mode: normal !important; }
+
+/* ---------- Bloque de contacto reordenado ---------- */
+.medios .descripcion { font-size: 14px; line-height: 1.5; font-family: var(--tipo-texto); }
+.medios .fila-contacto { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.medios .iconos { display: flex; gap: 8px; flex-wrap: wrap; }
+.medios .iconos a {
+  width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center;
+  border: 2px solid #0E0E0E; font-size: 18px; font-family: var(--tipo-texto); text-decoration: none; transition: background 0.2s, transform 0.2s;
+}
+.medios .iconos a:hover { background: #F7C948; transform: rotate(-3deg); }
+.medios .qr img { width: 60px; height: 60px; }
+.medios .qr figcaption { font-size: 11px; }
+.medios .contacto-directo { display: grid; gap: 10px; }
+.medios .contacto-link {
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+  font-family: var(--tipo-texto); font-weight: 600; font-size: 15px;
+}
+.medios .contacto-link i { font-size: 20px; width: 24px; text-align: center; }
+.medios .icono-pixel { width: 24px; height: 24px; display: block; }
+.medios .ubicacion { font-family: var(--tipo-texto); font-size: 13px; }
