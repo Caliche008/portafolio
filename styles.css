@@ -458,3 +458,12 @@ img.deco { display: block; }
   .hero-iconos img:nth-child(2) { width: 62px; margin-top: 30px; }
   .hero-iconos img:nth-child(3) { width: 66px; margin-top: 12px; }
 }
+
+/* ---------- Íconos de la portada: más abajo y centrados en el espacio libre ---------- */
+.hero-iconos { padding-top: 58px; }
+.hero-iconos img:nth-child(1) { margin-top: 0; }
+.hero-iconos img:nth-child(2) { margin-top: 44px; }
+.hero-iconos img:nth-child(3) { margin-top: 14px; }
+@media (max-width: 960px) {
+  .hero-iconos { padding-top: 24px; }
+}
