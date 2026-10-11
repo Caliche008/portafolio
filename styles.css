@@ -291,3 +291,18 @@ img.deco { display: block; }
 @media (max-width: 760px) {
   .deco-cerebro, .deco-computadora { width: 90px; }
 }
+
+/* ---------- Íconos de redes ---------- */
+.redes a {
+  width: 44px; height: 44px; padding: 0; display: inline-flex; align-items: center; justify-content: center;
+}
+.redes a i { font-size: 20px; }
+
+/* ---------- Foto de la tarjeta sin filtro (es pixel art a color) ---------- */
+.id-foto img { filter: none; mix-blend-mode: normal; }
+
+/* ---------- QR de AWS Builder en contacto ---------- */
+.qr { display: grid; justify-items: start; gap: 8px; }
+.qr a { display: inline-block; background: #F3EBDD; padding: 8px; border: 3px solid #0E0E0E; }
+.qr img { width: 140px; height: 140px; display: block; image-rendering: pixelated; }
+.qr figcaption { font-weight: 600; font-size: 14px; }
