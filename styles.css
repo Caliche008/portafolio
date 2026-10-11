@@ -467,3 +467,18 @@ img.deco { display: block; }
 @media (max-width: 960px) {
   .hero-iconos { padding-top: 24px; }
 }
+
+/* ---------- Íconos de la portada más abajo ---------- */
+.hero-iconos { padding-top: 110px; }
+.hero-iconos img:nth-child(2) { margin-top: 56px; }
+.hero-iconos img:nth-child(3) { margin-top: 26px; }
+@media (max-width: 960px) {
+  .hero-iconos { padding-top: 24px; }
+}
+
+/* ---------- Sección de hobbies ---------- */
+.rejilla-hobbies { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+.rejilla-hobbies .bloque-claro { transform: rotate(var(--r, 0deg)); }
+.hobby-icono { font-size: 42px; display: block; margin-bottom: 14px; color: #0E0E0E; }
+.rejilla-hobbies h3 { font-size: 20px; }
+.rejilla-hobbies p { font-size: 15px; }
