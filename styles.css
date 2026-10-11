@@ -411,3 +411,34 @@ img.deco { display: block; }
   .hero-iconos img:nth-child(2) { width: 62px; margin-bottom: 30px; }
   .inicio-acciones { grid-column: 1 / -1; }
 }
+
+/* ---------- Portada: disposición en dos filas, sin espacio vacío ---------- */
+.inicio { min-height: auto; padding-bottom: 40px; row-gap: 14px; align-items: start; }
+.columna-hola { display: contents; }
+.tarjeta-id { grid-column: 1 / span 8; grid-row: 1; align-self: start; }
+.bloque-hola { grid-column: 9 / span 4; grid-row: 1; align-self: start; min-height: 230px; }
+.hero-iconos {
+  grid-column: 9 / span 4; grid-row: 2; align-self: start;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 0; padding: 4px 12px 0; margin-top: 0;
+}
+.hero-iconos img { width: 130px; height: auto; }
+.hero-iconos img:nth-child(2) { width: 84px; margin-top: 56px; }
+.inicio-acciones { grid-column: 1 / span 8; grid-row: 2; margin-top: 0; align-self: start; }
+@media (max-width: 960px) {
+  .tarjeta-id, .bloque-hola, .hero-iconos, .inicio-acciones { grid-column: 1 / -1; grid-row: auto; }
+  .hero-iconos img { width: 110px; }
+  .hero-iconos img:nth-child(2) { width: 62px; margin-top: 40px; }
+}
+
+/* ---------- Hola mundo a la misma altura que la tarjeta ---------- */
+.inicio { align-items: stretch; }
+.tarjeta-id { align-self: stretch; }
+.bloque-hola {
+  align-self: stretch; min-height: 0;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.inicio-acciones, .hero-iconos { align-self: start; }
+@media (max-width: 960px) {
+  .bloque-hola { min-height: 200px; }
+}
