@@ -361,3 +361,18 @@ img.deco { display: block; }
 @media (prefers-reduced-motion: reduce) {
   .rastro, .particula, .progreso { display: none !important; }
 }
+
+/* ---------- Iconos pixel bajo "Hola mundo" ---------- */
+.hero-iconos {
+  grid-column: 10 / span 3; display: flex; justify-content: center; align-items: flex-start; gap: 18px; padding-top: 10px;
+}
+.hero-iconos img {
+  width: clamp(80px, 9vw, 120px); height: auto;
+  filter: drop-shadow(6px 6px 0 var(--negro));
+  animation: flotar 4s ease-in-out infinite;
+}
+.hero-iconos img:nth-child(2) { animation-delay: -2s; width: clamp(90px, 10vw, 135px); }
+.hero-iconos img:hover { scale: 1.12; transition: scale 0.3s; }
+@media (max-width: 960px) {
+  .hero-iconos { grid-column: 1 / -1; justify-content: flex-start; }
+}
