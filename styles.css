@@ -482,3 +482,40 @@ img.deco { display: block; }
 .hobby-icono { font-size: 42px; display: block; margin-bottom: 14px; color: #0E0E0E; }
 .rejilla-hobbies h3 { font-size: 20px; }
 .rejilla-hobbies p { font-size: 15px; }
+
+/* ---------- Hobbies más compactos ---------- */
+#hobbies { padding: 90px 24px 60px; }
+#hobbies .cabecera { margin-bottom: 26px; }
+#hobbies h2 { font-size: clamp(44px, 7vw, 84px); }
+.rejilla-hobbies { gap: 18px; }
+.rejilla-hobbies .bloque-claro { padding: 16px 18px; }
+.hobby-icono { font-size: 26px; margin-bottom: 8px; }
+.rejilla-hobbies h3 { font-size: 16px; margin-bottom: 6px; }
+.rejilla-hobbies p { font-size: 13px; line-height: 1.45; }
+
+/* ---------- Menos espacio entre la portada y la cinta ---------- */
+.inicio { padding-bottom: 0; }
+.cinta { margin-top: 14px; }
+.inicio-acciones .acciones { margin-bottom: 12px; }
+.inicio-acciones .escribiendo { margin-top: 0; }
+.hero-iconos { padding-top: 70px; }
+.hero-iconos img:nth-child(2) { margin-top: 40px; }
+.hero-iconos img:nth-child(3) { margin-top: 18px; }
+@media (max-width: 960px) {
+  .cinta { margin-top: 24px; }
+  .hero-iconos { padding-top: 24px; }
+}
+
+/* ---------- "Hola mundo" centrado dentro de su bloque ---------- */
+.bloque-hola { align-items: center; justify-content: center; text-align: center; }
+.bloque-hola p { margin: 0 auto; }
+
+/* ---------- Corrección final: Hola mundo centrado y íconos con aire arriba ---------- */
+.bloque-hola { display: flex !important; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.bloque-hola p { width: fit-content; margin: 0 auto !important; }
+.hero-iconos { padding-top: 104px; }
+.hero-iconos img:nth-child(2) { margin-top: 40px; }
+.hero-iconos img:nth-child(3) { margin-top: 18px; }
+@media (max-width: 960px) {
+  .hero-iconos { padding-top: 24px; }
+}
