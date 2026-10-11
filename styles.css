@@ -376,3 +376,18 @@ img.deco { display: block; }
 @media (max-width: 960px) {
   .hero-iconos { grid-column: 1 / -1; justify-content: flex-start; }
 }
+
+/* ---------- Ajuste de la portada: sin franja extra ---------- */
+.bloque-hola { min-height: 200px; }
+.inicio-acciones { grid-row: 2; grid-column: 1 / span 9; margin-top: -4px; }
+.hero-iconos {
+  grid-column: 10 / span 3; grid-row: 2;
+  justify-content: flex-end; align-items: flex-start;
+  gap: 16px; padding-top: 0; margin-top: -6px;
+}
+.hero-iconos img { width: 90px; }
+.hero-iconos img:nth-child(2) { width: 100px; }
+@media (max-width: 960px) {
+  .hero-iconos { grid-column: 1 / -1; grid-row: auto; justify-content: flex-start; margin-top: 0; }
+  .inicio-acciones { grid-row: auto; grid-column: 1 / -1; margin-top: 0; }
+}
