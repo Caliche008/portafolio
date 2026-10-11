@@ -60,7 +60,7 @@
   document.querySelectorAll(".barra-skill").forEach((b) => obsBarras.observe(b));
 
   // Texto que escribe el rol
-  const roles = ["Junior Cloud / AWS", "Soporte TI", "Infraestructura TI", "Diseño 3D"];
+  const roles = ["Junior Cloud / DevOps", "IA aplicada", "Infraestructura como código", "Diseño 3D y marketing"];
   const salida = document.getElementById("rol-animado");
   if (movimientoReducido) {
     salida.textContent = roles[0];
@@ -156,7 +156,7 @@
     const datos = new FormData(formulario);
     const asunto = `Contacto desde portafolio: ${datos.get("asunto")}`;
     const cuerpo = `Nombre: ${datos.get("nombre")}\nCorreo: ${datos.get("correo")}\n\n${datos.get("mensaje")}`;
-    window.location.href = `mailto:tucorreo@ejemplo.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+    window.location.href = `mailto:carlosaortizjaramillo@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
     estado.textContent = "Se abrió tu correo con el mensaje listo para enviar.";
     formulario.reset();
   });
@@ -192,5 +192,128 @@
     window.addEventListener("resize", ajustar);
     ajustar();
     dibujar();
+  }
+})();
+
+/* ================= Interactividad ================= */
+(function () {
+  "use strict";
+
+  // Barra de progreso de scroll (siempre activa)
+  const progreso = document.createElement("div");
+  progreso.className = "progreso";
+  document.body.appendChild(progreso);
+  window.addEventListener("scroll", () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progreso.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+  }, { passive: true });
+
+  const reducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducido) return;
+
+  const puntero = window.matchMedia("(pointer: fine)").matches;
+  const colores = ["#F7C948", "#F26B1D", "#3FA34D", "#E2445C", "#F3EBDD", "#2D3A8C"];
+  const decos = Array.from(document.querySelectorAll(".deco, .pc-ilustracion"));
+
+  // 1. Las imágenes aparecen con un efecto de píxeles al entrar en pantalla
+  const obsDeco = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.animate(
+        [
+          { scale: "0", opacity: 0 },
+          { scale: "1.15", opacity: 1, offset: 0.6 },
+          { scale: "1", opacity: 1 },
+        ],
+        { duration: 650, easing: "steps(5, end)" }
+      );
+      obsDeco.unobserve(e.target);
+    });
+  }, { threshold: 0.3 });
+  decos.forEach((d) => obsDeco.observe(d));
+
+  // 2. Las imágenes siguen suavemente al mouse con distinta profundidad
+  const estado = decos.map((el) => ({ el, d: 0.6 + Math.random() * 0.9, x: 0, y: 0 }));
+  let mx = 0, my = 0;
+  window.addEventListener("pointermove", (e) => {
+    mx = (e.clientX / window.innerWidth - 0.5) * 2;
+    my = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+  (function bucle() {
+    estado.forEach((s) => {
+      const tx = mx * 22 * s.d, ty = my * 22 * s.d;
+      s.x += (tx - s.x) * 0.08;
+      s.y += (ty - s.y) * 0.08;
+      s.el.style.translate = `${s.x.toFixed(1)}px ${s.y.toFixed(1)}px`;
+    });
+    requestAnimationFrame(bucle);
+  })();
+
+  // 3. Al hacer clic: giro, rebote y explosión de píxeles
+  function explotar(el) {
+    const padre = el.offsetParent;
+    if (!padre) return;
+    const cx = el.offsetLeft + el.offsetWidth / 2;
+    const cy = el.offsetTop + el.offsetHeight / 2;
+    for (let i = 0; i < 14; i++) {
+      const p = document.createElement("span");
+      p.className = "particula";
+      p.style.background = colores[Math.floor(Math.random() * colores.length)];
+      p.style.left = cx + "px";
+      p.style.top = cy + "px";
+      padre.appendChild(p);
+      const ang = Math.random() * Math.PI * 2;
+      const dist = 40 + Math.random() * 60;
+      const a = p.animate(
+        [
+          { transform: "translate(-50%, -50%) scale(1)", opacity: 1 },
+          { transform: `translate(calc(-50% + ${Math.cos(ang) * dist}px), calc(-50% + ${Math.sin(ang) * dist}px)) scale(0.6)`, opacity: 0 },
+        ],
+        { duration: 600 + Math.random() * 200, easing: "steps(4, end)" }
+      );
+      a.onfinish = () => p.remove();
+    }
+  }
+  decos.forEach((el) => {
+    el.addEventListener("click", () => {
+      el.animate([{ rotate: "0deg" }, { rotate: "360deg" }], { duration: 700, easing: "steps(8, end)" });
+      el.animate([{ scale: "1" }, { scale: "1.25" }, { scale: "0.95" }, { scale: "1" }], { duration: 400 });
+      explotar(el);
+    });
+  });
+
+  // 4. Rastro de píxeles con el cursor (solo con mouse)
+  if (puntero) {
+    let ultimo = 0;
+    const variantes = ["", "verde", "coral"];
+    window.addEventListener("pointermove", (e) => {
+      const ahora = performance.now();
+      if (ahora - ultimo < 80) return;
+      ultimo = ahora;
+      const p = document.createElement("span");
+      p.className = "rastro " + variantes[Math.floor(Math.random() * variantes.length)];
+      p.style.left = e.clientX - 4 + "px";
+      p.style.top = e.clientY - 4 + "px";
+      document.body.appendChild(p);
+      const a = p.animate(
+        [
+          { opacity: 0.9, transform: "scale(1)" },
+          { opacity: 0, transform: "scale(0.2) translateY(-10px)" },
+        ],
+        { duration: 700, easing: "steps(4, end)" }
+      );
+      a.onfinish = () => p.remove();
+    }, { passive: true });
+
+    // 5. Botones que se atraen al cursor
+    document.querySelectorAll(".boton").forEach((b) => {
+      b.addEventListener("pointermove", (e) => {
+        const r = b.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) * 0.2;
+        const dy = (e.clientY - (r.top + r.height / 2)) * 0.25;
+        b.style.translate = `${dx.toFixed(1)}px ${dy.toFixed(1)}px`;
+      });
+      b.addEventListener("pointerleave", () => { b.style.translate = "0px 0px"; });
+    });
   }
 })();

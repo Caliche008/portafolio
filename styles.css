@@ -331,3 +331,33 @@ img.deco { display: block; }
 .medios .contacto-link i { font-size: 20px; width: 24px; text-align: center; }
 .medios .icono-pixel { width: 24px; height: 24px; display: block; }
 .medios .ubicacion { font-family: var(--tipo-texto); font-size: 13px; }
+
+/* ================= Interactividad ================= */
+.deco { pointer-events: auto; cursor: pointer; transition: filter 0.3s ease; }
+.deco:hover { filter: drop-shadow(8px 8px 0 var(--negro)) brightness(1.15); }
+.pc-ilustracion, .sello-girando, .estrella-girando { cursor: pointer; pointer-events: auto; }
+
+.boton { transition: transform 0.2s, background 0.2s, color 0.2s, translate 0.25s ease-out; }
+
+.tarjeta-id { transition: transform 0.3s, rotate 0.4s ease, scale 0.4s ease; }
+.tarjeta-id:hover { rotate: 1deg; scale: 1.02; }
+.bloque-hola { transition: transform 0.3s, rotate 0.4s ease, scale 0.4s ease; }
+.bloque-hola:hover { rotate: -2deg; scale: 1.03; }
+
+.bloque-claro, .bloque-oscuro, .servicio, .proyecto {
+  transition: transform 0.3s, box-shadow 0.3s, scale 0.3s ease, translate 0.3s, opacity 0.8s ease;
+}
+.bloque-claro:hover, .bloque-oscuro:hover, .servicio:hover, .proyecto:hover { scale: 1.02; }
+
+.progreso {
+  position: fixed; top: 0; left: 0; height: 6px; width: 0; z-index: 45; pointer-events: none;
+  background: linear-gradient(90deg, var(--amarillo), var(--naranja), var(--verde), #3D7BD9, #8B5CF6);
+}
+.rastro { position: fixed; width: 8px; height: 8px; pointer-events: none; z-index: 60; background: var(--amarillo); }
+.rastro.verde { background: var(--verde); }
+.rastro.coral { background: var(--rojo); }
+.particula { position: absolute; width: 8px; height: 8px; pointer-events: none; z-index: 5; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rastro, .particula, .progreso { display: none !important; }
+}
